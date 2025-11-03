@@ -16,7 +16,10 @@ Konfigurasi:<br>
 Edit bagian ini pada index.php:<br>
 <pre>
 $SERVERS = array(
-array('name' => 'Nama Server 1',  'url' => 'http://isi_dengan_ip_server/server_agent.php',  'token' => 'IsiDenganTokenRahasia'),
+array(
+  'name' => 'Nama Server 1',  
+  'url' => 'http://isi_dengan_ip_server/server_agent.php',  
+  'token' => 'IsiDenganTokenRahasia'),
 ...
 );
 </pre>
