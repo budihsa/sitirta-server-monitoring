@@ -4,7 +4,7 @@ Sitirta Monitoring System
 Requirement:
 - Web server: Nginx atau Apache.
 - PHP 5.6 (atau kompatibel) dengan ext-curl aktif.
-- Akses HTTP ke tiap server/agent: http://IP/sitmon_agent.php?token=...
+- Akses HTTP ke tiap server/agent: http://IP_SERVER/sitmon_agent.php?token=...
 - Internet outbound (untuk CDN Bootstrap, Bootstrap Icons, Chart.js), atau siapkan mirror lokal bila lingkungan offline.
 
 Konfigurasi:
