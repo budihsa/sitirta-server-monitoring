@@ -3,9 +3,9 @@ date_default_timezone_set('Asia/Jakarta');
 
 /* ---------- DAFTAR SERVER (AGENT JSON) ---------- */
 $SERVERS = array(
-    array('name' => 'Server 1',  'url' => 'http://isi_dengan_ip_server/sitmon_agent.php',  'token' => 'IsiDenganTokenRahasia'),
-    array('name' => 'Server 2',  'url' => 'http://isi_dengan_ip_server/sitmon_agent.php',  'token' => 'IsiDenganTokenRahasia'),
-    array('name' => 'Server 3',  'url' => 'http://isi_dengan_ip_server/sitmon_agent.php',  'token' => 'IsiDenganTokenRahasia'),
+    array('name' => 'Nama Server 1',  'url' => 'http://isi_dengan_ip_server/server_agent.php',  'token' => 'IsiDenganTokenRahasia'),
+    array('name' => 'Nama Server 2',  'url' => 'http://isi_dengan_ip_server/server_agent.php',  'token' => 'IsiDenganTokenRahasia'),
+    array('name' => 'Nama Server 3',  'url' => 'http://isi_dengan_ip_server/server_agent.php',  'token' => 'IsiDenganTokenRahasia'),
 );
 
 /* ---------- FETCHER (cURL multi) ---------- */
