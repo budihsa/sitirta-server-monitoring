@@ -34,7 +34,6 @@ function cpuUsagePercent($sleep_ms) {
     if (!$s1 || !$s2) return null;
     $c1 = preg_split('/\s+/', trim($s1[0]));
     $c2 = preg_split('/\s+/', trim($s2[0]));
-    // cpu  user nice system idle iowait irq softirq steal guest guest_nice
     $idle1 = isset($c1[4]) ? (int)$c1[4] : 0; $idle2 = isset($c2[4]) ? (int)$c2[4] : 0;
     $iow1  = isset($c1[5]) ? (int)$c1[5] : 0; $iow2  = isset($c2[5]) ? (int)$c2[5] : 0;
     $idleAll1 = $idle1 + $iow1;
@@ -74,12 +73,12 @@ function memInfo() {
         'total'       => $total,
         'available'   => $avail,
         'used'        => $used,
-        'free'        => $avail,                 // alias agar cocok UI
+        'free'        => $avail,                 
         'percent'     => $pct,
         'h_total'     => humanBytes($total),
         'h_used'      => humanBytes($used),
         'h_available' => humanBytes($avail),
-        'h_free'      => humanBytes($avail)      // alias agar cocok UI
+        'h_free'      => humanBytes($avail)      
     );
 }
 function disksInfo() {
@@ -89,7 +88,6 @@ function disksInfo() {
     $lines = explode("\n", trim($out));
     array_shift($lines); // header
 
-    // FS pseudo yang di-skip (tidak ingin tampil di UI)
     $skip_types = array(
         'tmpfs','devtmpfs','squashfs','overlay','aufs','ramfs','cgroup','proc',
         'sysfs','debugfs','securityfs','pstore','efivarfs','mqueue','bpf',
@@ -156,12 +154,12 @@ function diskSummary($entries) {
         'total'   => $total,
         'used'    => $used,
         'avail'   => $avail,
-        'free'    => $avail,            // alias agar cocok UI
+        'free'    => $avail,            
         'percent' => $pct,
         'h_total' => humanBytes($total),
         'h_used'  => humanBytes($used),
         'h_avail' => humanBytes($avail),
-        'h_free'  => humanBytes($avail) // alias agar cocok UI
+        'h_free'  => humanBytes($avail) 
     );
 }
 function uptimeHuman() {
@@ -213,8 +211,8 @@ $data = array(
         'load15'  => isset($load[2]) ? round($load[2], 2) : null
     ),
     'mem'      => $mem,
-    'disk'     => $diskS,   // ringkasan total (cocok untuk progress bar utama)
-    'disks'    => $disks    // detail per mount ("/" dan "/boot/efi" akan terlihat)
+    'disk'     => $diskS,   // ringkasan total
+    'disks'    => $disks    // detail per mount
 );
 
 echo json_encode($data);
